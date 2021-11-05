@@ -4,7 +4,6 @@ import {
   getTickers,
   changeCheckedTicker,
 } from "../../redux/ticker/tickerSelectors";
-import { useEffect, useState } from "react";
 
 export const TickerList = () => {
   const tickers = useSelector(getTickers);
@@ -15,7 +14,7 @@ export const TickerList = () => {
       <tbody>
         {tickers.map(({ ticker, price, change_percent, yield: sum }, i) =>
           filteredTickers.length <= 0 ? (
-            <Item key={i}>
+            <Item key={i} data-testid="custom-element">
               <Title>{ticker}</Title>
               <Price>{price}$</Price>
               <Percent>{change_percent}%</Percent>

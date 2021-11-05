@@ -26,13 +26,21 @@ export const TickersCheckBox = () => {
   };
 
   return (
-    <form>
-      {tickers.map(({ ticker }, i) => (
-        <Label key={i}>
-          {ticker}
-          <input type="checkbox" onChange={handleOnClick} name={ticker} />
-        </Label>
-      ))}
-    </form>
+    <>
+      <h1>Can be interesting for you...</h1>
+      <form>
+        {tickers.map(({ ticker }, i) => (
+          <Label key={i} data-testid="custom-label">
+            {ticker}
+            <input
+              type="checkbox"
+              onChange={handleOnClick}
+              name={ticker}
+              data-testid="custom-input"
+            />
+          </Label>
+        ))}
+      </form>
+    </>
   );
 };
